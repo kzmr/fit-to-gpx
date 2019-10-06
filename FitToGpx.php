@@ -1,17 +1,13 @@
 <?php
-
-require __DIR__.'/vendor/autoload.php';
-
 /**
  * FitToGpx
  */
 class FitToGpx
 {
-
     protected $pFFA;
 
     public function __construct($input_fit_file){
-        $this->pFFA = new phpFITFileAnalysis($input_fit_file);
+        $this->pFFA = new adriangibbons\phpFITFileAnalysis($input_fit_file);
     }
 
     public function saveAsGpx($output_gpx_file)
