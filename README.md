@@ -15,5 +15,13 @@ require base_path().'/libs/fit-to-gpx/FitToGpx.php';
 Call
 ```
 $fitogpx = new \FitToGpx($input_file_path);
+if ($errorMsg = $fitogpx->getError()) {
+    \Log::error($errorMsg);
+    return;
+}
 $fitogpx->saveAsGpx($output_file_path);
+if ($errorMsg = $fitogpx->getError()) {
+    \Log::error($errorMsg);
+    return;
+}
 ```
